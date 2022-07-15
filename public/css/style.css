@@ -1,0 +1,122 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 100px auto;
+}
+/* CSS NAVBAR */
+.navbar {
+    height: 100px;
+    background-color: #21476C;
+    
+}
+.logo {
+    position: absolute;
+    margin-left: 20px;
+}
+.logo-name {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.logo-name p {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+/* CSS FOOTER */
+footer {
+    margin-top: 62px;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding: 10px;
+    text-align: center;
+    background-color: #003366;
+}
+footer p {
+    position: relative;
+    padding: 10px;
+    font-size: 13px;
+    color: white;
+    margin: 0;
+}
+
+/* FORM LOGIN */
+
+/* CSS CONTENT */
+.content {
+    padding: 20px;
+}
+
+.content .judul-content {
+    text-align: center;
+    font-size: 20px;
+    color: #707070;
+    font-weight: bold;
+}
+
+/* CSS FORM */
+.form-login {
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 22%);
+    width: 382px;
+    height: 400;
+    padding: 30px;
+    border-radius: 50px;
+    margin-left: 32%;
+}
+
+.form-login .judul-form {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #707070;
+    font-weight: bold;
+}
+.form-login p, .form-check-label{
+    font-size: 13px;
+}
+.form-login .form-check-label {
+    margin-bottom: 35px;
+}
+.form-login p {
+    margin: 2px;
+    text-align: center;
+}
+
+.form-login input {
+    border-radius: 10px;
+    font-size: 14px;
+}
+.btn-masuk {
+    width: 100%;
+    text-align: center;
+    border-radius: 18px;
+    height: 40px;
+    font-size: 13px;
+    background-color: #003366;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* CSS ALERT VALIDASI */
+
+#validationServerFeedback {
+    margin-left: 10px;
+    margin-top: 0;
+}
+/* RESPONSI HALAMAN WEB */
+@media screen and (max-width: 600px) {
+    /* CSS FORM LOGIN */
+    .form-login {
+        margin-left: 5%;
+    }
+}

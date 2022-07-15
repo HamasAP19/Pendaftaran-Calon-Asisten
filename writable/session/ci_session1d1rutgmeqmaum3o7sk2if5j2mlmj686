@@ -1,0 +1,10 @@
+__ci_last_regenerate|i:1655631022;_ci_previous_url|s:32:"http://localhost:8080/index.php/";error|s:264:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>username harus diisi</li>
+					<li>password harus diisi</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:3:{s:5:"error";s:3:"old";s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:3:{s:14:"csrf_test_name";s:32:"281304bc897e5883f9a9949000e4a857";s:8:"username";s:0:"";s:8:"password";s:0:"";}}_ci_validation_errors|s:92:"a:2:{s:8:"username";s:20:"username harus diisi";s:8:"password";s:20:"password harus diisi";}";
