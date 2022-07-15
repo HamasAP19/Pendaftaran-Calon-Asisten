@@ -25,7 +25,7 @@ class User extends BaseController
     public function masuk()
     {
         if (!$this->validate([
-            'username'  => [
+            'email'  => [
                 'rules'     => 'required|valid_email',
                 'errors'    => [
                     'required'      => '{field} harus diisi',
@@ -42,14 +42,17 @@ class User extends BaseController
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
         } else {
-            $inputData = $this->userModel->loginUser($this->request->getVar('username'), $this->request->getVar('password'));
-
+            $inputData = $this->userModel->loginUser($this->request->getVar('email'), $this->request->getVar('password'));
             if ($inputData) {
                 session()->set('nama_user', $inputData['nama_user']);
                 echo "<h3>Berhasil Login, Selamat Datang </h3><h1>" . session()->get('nama_user') . "</h1>";
                 echo "<a href=''>Masuk Dashboard</a>";
             } else {
-                session()->setFlashdata('gagalLogin', true);
+                $session = [
+                    'pesan'     => 'Email atau Password salah!!',
+                    'class'     => 'alert-danger'
+                ];
+                session()->setFlashdata($session);
                 return redirect('/')->withInput();
             }
         }
@@ -95,6 +98,20 @@ class User extends BaseController
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
+        } else {
+            $this->userModel->insert([
+                'nama_user'     => $this->request->getVar('namaLengkap'),
+                'email'         => $this->request->getVar('email'),
+                'password'      => $this->request->getVar('password'),
+                'angkatan'      => $this->request->getVar('angkatan'),
+                'jenis_kel'     => $this->request->getVar('jenis_kelamin')
+            ]);
+            $session = [
+                'pesan'     => 'Berhasil melakukan pendaftaran, silahkan login!!',
+                'class'     => 'alert-success'
+            ];
+            session()->setFlashdata($session);
+            return redirect()->to('/daftar');
         }
     }
 }

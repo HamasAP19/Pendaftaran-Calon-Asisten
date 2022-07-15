@@ -5,6 +5,11 @@
     <form class="form-login" action="<?= base_url('/tambah'); ?>" method="post">
         <?= csrf_field(); ?>
         <p class="judul-form">FORM PENDAFTARAN CALON ASISTEN PRAKTIKUM</p>
+        <?php if (session()->getFlashdata('pesan')) : ?>
+            <div class="alert <?= session()->getFlashdata('class'); ?>" role="alert">
+                <?= session()->getFlashdata('pesan'); ?>
+            </div>
+        <?php endif; ?>
         <div class="mb-3">
             <input type="text" class="form-control <?= ($validation->hasError('namaLengkap')) ? 'is-invalid' : ((old('namaLengkap') != null) ? 'is-valid' : ''); ?>" value="<?= old('namaLengkap'); ?>" id="inputnamaLengkap" placeholder="Nama Lengkap" name="namaLengkap">
             <div id="validationServerFeedback" class="invalid-feedback"><?= $validation->getError('namaLengkap'); ?></div>
